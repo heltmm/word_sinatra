@@ -47,7 +47,7 @@ post('/image/:name') do
   erb(:word_display)
 end
 
-get('/sort/') do
+post('/sort/') do
   Word.sort
   @dictionary = Word.display
   redirect ('/')
