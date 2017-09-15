@@ -25,8 +25,30 @@ get('/:name') do
 end
 
 post('/:name') do
+  binding.pry
   @word = Word.search(params[:name])
   definition = params['definition']
   Word.add_definition(@word.name, definition)
   erb(:word_display)
+end
+
+#only here incase someone manually types this adress in
+get('/image/:name') do
+  @word = Word.search(params[:name])
+  redirect ("/#{params[:name]}")
+  erb(:word_display)
+end
+
+post('/image/:name') do
+  @word = Word.search(params[:name])
+  link = params['link']
+  Word.add_link(@word.name, link)
+  redirect ("/#{params[:name]}")
+  erb(:word_display)
+end
+
+post('/sort/') do
+  Word.sort
+  @dictionary = Word.display
+  erb(:word_input)
 end

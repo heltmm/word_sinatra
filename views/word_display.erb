@@ -1,11 +1,22 @@
 <h1><%= @word.name %>:</h1>
+<img src="<%=@word.link%>">
 <% @word.definitions.each do |definition| %>
-<h2>Definition<%=@word.definitions.index(definition) + 1%>: <%= definition %></h2>
+<h2>Definition <%=@word.definitions.index(definition) + 1%>: <%= definition %></h2>
 <% end %>
 
 <form action="/<%=@word.name %>" method="post">
+  <label for="definition">Type in your definition here</label>
   <input type="text" name="definition">
   <button type="submit">Add Definition!</button>
+</form>
+
+<form action="/image/<%=@word.name %>" method="post">
+  <label for="link">Type in your link here</label>
+  <input type="text" name="link">
+  <button type="submit">Add an Image link!</button>
+</form>
+<form action="/delete" method="post">
+
 </form>
 
 <br>
