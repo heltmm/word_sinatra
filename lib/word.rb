@@ -1,5 +1,5 @@
 class Word
-  @@list = []
+  @@dictionary = []
 
   attr_accessor :name, :definition, :link
 
@@ -10,15 +10,15 @@ class Word
   end
 
   def self.display
-    @@list
+    @@dictionary
   end
 
   def save
-    @@list.push(self)
+    @@dictionary.push(self)
   end
 
   def self.search(name)
-    @@list.each do |word|
+    @@dictionary.each do |word|
       if name == word.name
         return word
       end
@@ -26,7 +26,7 @@ class Word
   end
 
   def self.remove(name)
-    @@list.delete(Word.search(name))
+    @@dictionary.delete(Word.search(name))
   end
 
   def self.add_definition(name, definition)
@@ -38,11 +38,11 @@ class Word
   end
 
   def self.sort
-    @@list.sort_by! {|word| word.name}
+    @@dictionary.sort_by! {|word| word.name}
   end
 
   def self.random
-    @@list.sample(1)
+    @@dictionary.sample(1)
   end
 
 end

@@ -1,11 +1,21 @@
 require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
-require('./lib/contact')
+require('./lib/word')
 require('pry')
 
 
 get('/') do
-  @list = Word.all
+
+  @dictionary = Word.display
+  erb(:word_input)
+end
+
+post('/') do
+  @dictionary = Word.display
+  name = params['name']
+  hash = {'name' => name}
+  word = Word.new(hash)
+  word.save
   erb(:word_input)
 end

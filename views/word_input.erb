@@ -1,14 +1,10 @@
-
-
-
-
-
-
-
+<% @dictionary.each do |word| %>
+<h2><%= word.name %></h2>
+<% end %>
 
 
 <form action="/" method="post">
   <h2>Add a Word</h2>
-  <input type="text" name="name">
+  <input type="text" name="name" autofocus="autofocus">
   <button type="submit">Add Word</button>
 </form>
