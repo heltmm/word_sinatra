@@ -6,7 +6,6 @@ require('pry')
 
 
 get('/') do
-
   @dictionary = Word.display
   erb(:word_input)
 end
@@ -18,4 +17,9 @@ post('/') do
   word = Word.new(hash)
   word.save
   erb(:word_input)
+end
+
+get('/:name') do
+  @word = Word.search(params[:name])
+  erb(:word_display)
 end
