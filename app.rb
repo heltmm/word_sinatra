@@ -56,13 +56,19 @@ end
 
 get('/all/') do
   @dictionary = Word.display
+  if @dictionary.length == 0
+    redirect ('/')
+  end
 
   erb(:word_and_def)
 end
 
 get('/random/') do
   dictionary = Word.display
-  @word = dictionary.sample(1)[0]
+  if dictionary.length == 0
+    redirect ('/')
+  end
+  @word = Word.random[0]
   erb(:word_display)
 end
 

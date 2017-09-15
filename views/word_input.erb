@@ -2,6 +2,17 @@
   <h1>Let's Learn Some New Words!</h1>
 </div>
 
+<div>
+  <form class='button-group' action="/sort/" method="get">
+    <button type="submit" class= 'btn btn-info'>Sort Alphabetically</button>
+  </form>
+  <form class='button-group' action="/all/" method="get">
+    <button type="submit" class= 'btn btn-success'>See all Words and Definitions</button>
+  </form>
+  <form class='button-group' action="/random/" method="get">
+    <button type="submit" class= 'btn btn-warning'>Look at a random word</button>
+  </form>
+<div>
 <h2>Type in a new word to add it to our list</h2>
 <form action="/" method="post">
   <input type="text" name="name" autofocus="autofocus">
@@ -15,14 +26,3 @@
 <% end %>
 
 <br>
-<div>
-  <form class='button-group' action="/sort/" method="get">
-    <button type="submit" class= 'btn btn-info'>Sort Alphabetically</button>
-  </form>
-  <form class='button-group' action="/all/" method="get">
-    <button type="submit" class= 'btn btn-success'>See all Words and Definitions</button>
-  </form>
-  <form class='button-group' action="/random/" method="get">
-    <button type="submit" class= 'btn btn-warning'>Look at a random word</button>
-  </form>
-<div>

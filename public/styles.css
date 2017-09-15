@@ -1,9 +1,17 @@
 .jumbotron {
   text-align: center;
+  background: rgba(107, 160, 244, 0.5);
 }
 .button-group{
   display: inline-block;
 }
 p {
   font-style: italic;
+}
+img {
+  max-width: 300px
+}
+body {
+  background-image: url('words.jpg');
+  background-attachment: fixed;
 }
