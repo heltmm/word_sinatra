@@ -45,4 +45,8 @@ class Word
     @@dictionary.sample(1)
   end
 
+  def self.clear()
+    @@dictionary = []
+  end
+
 end

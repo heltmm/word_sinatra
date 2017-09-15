@@ -62,5 +62,12 @@ describe('Word') do
     end
   end
 
+  describe('#clear') do
+    it("clears all items from the dictionary ") do
+      Word.clear()
+      expect(Word.display).to eq([])
+    end
+  end
+
 
 end
