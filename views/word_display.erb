@@ -1,7 +1,7 @@
-<h1><%= @word.name %>:</h1>
-<img src="<%=@word.link%>">
+<h1><%= @word.name %></h1>
+<p><img src="<%=@word.link%>"><p>
 <% @word.definitions.each do |definition| %>
-<h2>Definition <%=@word.definitions.index(definition) + 1%>: <%= definition %></h2>
+  <h2>Definition <%=@word.definitions.index(definition) + 1%>: <%= definition %></h2>
 <% end %>
 
 <form action="/<%=@word.name %>" method="post">

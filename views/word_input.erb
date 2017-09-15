@@ -1,5 +1,5 @@
 <% @dictionary.each do |word| %>
-<h2><a href="/<%= word.name %>"><%= word.name %></a></h2>
+  <h2><a href="/<%= word.name %>"><%= word.name %></a></h2>
 <% end %>
 
 <h2>Add a Word</h2>
@@ -7,6 +7,9 @@
   <input type="text" name="name" autofocus="autofocus">
   <button type="submit">Add Word</button>
 </form>
-<form action="/sort/" method="post">
+<form action="/sort/" method="get">
   <button type="submit">Sort Alphabetically</button>
+</form>
+<form action="/all/" method="get">
+  <button type="submit">See all Words and Definitions</button>
 </form>

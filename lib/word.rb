@@ -38,7 +38,7 @@ class Word
   end
 
   def self.sort
-    @@dictionary.sort_by! {|word| word.name}
+    @@dictionary.sort_by! {|word| word.name.downcase}
   end
 
   def self.random

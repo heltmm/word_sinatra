@@ -25,7 +25,6 @@ get('/:name') do
 end
 
 post('/:name') do
-  binding.pry
   @word = Word.search(params[:name])
   definition = params['definition']
   Word.add_definition(@word.name, definition)
@@ -47,8 +46,14 @@ post('/image/:name') do
   erb(:word_display)
 end
 
-post('/sort/') do
+get('/sort/') do
   Word.sort
   @dictionary = Word.display
+  redirect ('/')
   erb(:word_input)
+end
+
+get('/all/') do
+  @dictionary = Word.display
+  erb(:word_and_def)
 end
