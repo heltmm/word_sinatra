@@ -1,18 +1,27 @@
+<div class='jumbotron'>
+  <h1>Let's Learn Some New Words!</h1>
+</div>
+
+<h2>Type in a new word to add it to our list</h2>
+<form action="/" method="post">
+  <input type="text" name="name" autofocus="autofocus">
+  <button type="submit" class="btn btn-primary"><span>✓</span>Add a Word!</button>
+</form>
+
+
 <% @dictionary.each do |word| %>
   <h2><a href="/<%= word.name %>"><%= word.name %></a></h2>
 <% end %>
 
-<h2>Add a Word</h2>
-<form action="/" method="post">
-  <input type="text" name="name" autofocus="autofocus">
-  <button type="submit">Add Word</button>
-</form>
-<form action="/sort/" method="get">
-  <button type="submit">Sort Alphabetically</button>
-</form>
-<form action="/all/" method="get">
-  <button type="submit">See all Words and Definitions</button>
-</form>
-<form action="/random/" method="get">
-  <button type="submit">Look at a random word</button>
-</form>
+<br>
+<div>
+  <form class='button-group' action="/sort/" method="get">
+    <button type="submit">Sort Alphabetically</button>
+  </form>
+  <form class='button-group' action="/all/" method="get">
+    <button type="submit">See all Words and Definitions</button>
+  </form>
+  <form class='button-group' action="/random/" method="get">
+    <button type="submit">Look at a random word</button>
+  </form>
+<div>

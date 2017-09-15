@@ -55,6 +55,7 @@ end
 
 get('/all/') do
   @dictionary = Word.display
+
   erb(:word_and_def)
 end
 

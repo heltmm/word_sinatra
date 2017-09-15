@@ -26,7 +26,7 @@ class Word
   end
 
   def self.remove(name)
-    @@dictionary.delete(Word.search(name))
+    @@dictionary.delete_at(Word.display.index(Word.search(name)))
   end
 
   def self.add_definition(name, definition)
