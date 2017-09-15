@@ -1,1 +1,7 @@
-<h1><%= @word.name %></h1>
+<h1><%= @word.name %>:</h1>
+<h2><%= @word.definition %></h2>
+
+<form action="/<%=@word.name %>" method="post">
+  <input type="text" name="definition">
+  <button type="submit">Add Definition!</button>
+</form>

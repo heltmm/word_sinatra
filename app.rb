@@ -23,3 +23,13 @@ get('/:name') do
   @word = Word.search(params[:name])
   erb(:word_display)
 end
+
+post('/:name') do
+  @word = Word.search(params[:name])
+  definition = params['definition']
+
+  Word.add_definition(@word.name, definition)
+
+
+  erb(:word_display)
+end
