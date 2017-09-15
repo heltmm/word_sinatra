@@ -41,5 +41,8 @@ class Word
     @@list.sort_by! {|word| word.name}
   end
 
+  def self.random
+    @@list.sample(1)
+  end
 
 end
