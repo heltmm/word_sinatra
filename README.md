@@ -23,7 +23,7 @@ _A webpage for children that asks them to type in a word.  The word is added to 
 | Randomly visit a word page                             | List: Car, Apple, Pizza                              | Pizza Page: definition: link:                                                 |
 ## Setup
 
-* _._
+* _type: https://mighty-brushlands-61739.herokuapp.com/ into url bar_
 
 
 ## Known Bugs
