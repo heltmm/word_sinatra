@@ -1,10 +1,10 @@
-Class Word
+class Word
   @@list = []
 
-  attr_accessor :name, :definition :link
+  attr_accessor :name, :definition, :link
 
   def initialize(hash)
-    @word = hash['name']
+    @name = hash['name']
     @definition = ''
     @link = ''
   end

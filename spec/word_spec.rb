@@ -1,4 +1,4 @@
-require('contact')
+require('word')
 require('rspec')
 require('pry')
 
@@ -14,7 +14,12 @@ describe('Word') do
   describe('#save') do
     word.save()
     it('saves the chosen word to a class variable called list') do
-      expect(@@list[0].name).to eq('hat')
+      expect(Word.display[0].name).to eq('hat')
+    end
+  end
+  describe('#display') do
+    it('returns the list of words') do
+      expect(Word.display).to eq([word])
     end
   end
 
@@ -27,14 +32,14 @@ describe('Word') do
   describe('#remove') do
     it('removes word from list') do
       Word.remove('hat')
-      expect(@@list).to eq([])
+      expect(Word.display).to eq([])
     end
   end
 
   describe('#add_definition') do
     it('adds a definition for a chosen word') do
       Word.add_definition('hat', 'a piece of apparel worn on the head')
-      expect(@@list[0].definition).to eq ('a piece of apparel worn on the head')
+      expect(Word.dispaly[0].definition).to eq ('a piece of apparel worn on the head')
     end
   end
 
