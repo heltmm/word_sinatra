@@ -10,6 +10,17 @@ _A webpage for children that asks them to type in a word.  The word is added to 
 
 ## Specs
 
+| Specification                                          | Input                                                | Output                                                                        |
+|--------------------------------------------------------|------------------------------------------------------|-------------------------------------------------------------------------------|
+| Add word to list                                       | Apple                                                | List: Apple                                                                   |
+| Words are clickable links to own page with information | click Apple                                          | Apple Page: defintion: link:                                                  |
+| Sort list alphabetically                               | List: Car, Apple                                     | List: Apple, Car                                                              |
+| See all words and definitions                          | List: Car, Apple                                     | Car: definition: link: Apple: definition: link:                               |
+| each word has its own page with specific information   | Pizza                                                | Pizza Page: definition: link:                                                 |
+| add definition to word                                 | Pizza Page: definition: link:                        | Pizza Page: definition: delicious Italian dish                                |
+| add link to word                                       | Pizza Page: definition: delicious Italian dish link: | Pizza Page:definition: delicious Italian dish link: "www.pizza.com/pizza.jpg" |
+| delete word                                            | List: Car, Apple, Pizza                              | List: Car, Pizza                                                              |
+| Randomly visit a word page                             | List: Car, Apple, Pizza                              | Pizza Page: definition: link:                                                 |
 ## Setup
 
 * _._
