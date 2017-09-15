@@ -1,5 +1,7 @@
 <h1><%= @word.name %></h1>
-<p><img src="<%=@word.link%>"><p>
+<% if @word.link != ''%>
+  <img src="<%=@word.link%>" alt='image did not load'>
+<% end %>
 <% @word.definitions.each do |definition| %>
   <h2>Definition <%=@word.definitions.index(definition) + 1%>: <%= definition %></h2>
 <% end %>
@@ -11,12 +13,12 @@
 </form>
 
 <form action="/image/<%=@word.name %>" method="post">
-  <label for="link">Type in your link here</label>
+  <label for="link">Type in your link here to add an Image</label>
   <input type="text" name="link">
-  <button type="submit">Add an Image link!</button>
+  <button type="submit">Add an Image!</button>
 </form>
-<form action="/delete" method="post">
-
+<form action="/delete/<%=@word.name %>" method="post">
+  <button type="submit" name="button">Delete</button>
 </form>
 
 <br>

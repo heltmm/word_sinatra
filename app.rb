@@ -57,3 +57,14 @@ get('/all/') do
   @dictionary = Word.display
   erb(:word_and_def)
 end
+
+get('/random/') do
+  dictionary = Word.display
+  @word = dictionary.sample(1)[0]
+  erb(:word_display)
+end
+
+post('/delete/:name') do
+  Word.remove(params[:name])
+  redirect ('/')
+end
