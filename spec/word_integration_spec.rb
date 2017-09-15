@@ -62,7 +62,16 @@ describe('You have', {:type => :feature}) do
     visit('/')
     fill_in('name', :with => 'Apple')
     click_button('✓Add a Word!')
-    click_button('Look at a random word')
+    click_button('Look at a Random Word')
     expect(page).to have_content('No Definition added yet')
+  end
+  it('sort alphabetically') do
+    visit('/')
+    fill_in('name', :with => 'Zebra')
+    click_button('✓Add a Word!')
+    fill_in('name', :with => 'Tree')
+    click_button('✓Add a Word!')
+    click_button('Sort Alphabetically')
+    expect(page).to have_content('Tree Zebra')
   end
 end
