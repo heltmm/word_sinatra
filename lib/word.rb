@@ -14,7 +14,9 @@ class Word
   end
 
   def save
-    @@dictionary.push(self)
+    if self.name != ""
+      @@dictionary.push(self)
+    end
   end
 
   def self.search(name)

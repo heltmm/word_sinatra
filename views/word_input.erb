@@ -19,10 +19,11 @@
   <button type="submit" class="btn btn-primary"><span>✓</span>Add a Word!</button>
 </form>
 <br>
+
 <h2>List of Words:</h2>
 <p>Click on a word to see its definition</p>
-<% @dictionary.each do |word| %>
-  <h2><a href="/<%= word.name %>"><%= word.name %></a></h2>
-<% end %>
-
-<br>
+<div class='list'>
+  <% @dictionary.each do |word| %>
+    <h2><a href="/<%= word.name %>"><%= word.name %></a></h2>
+  <% end %>
+<div>
