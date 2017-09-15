@@ -41,7 +41,7 @@ describe('Word') do
     it('adds a definition for a chosen word') do
       word.save
       Word.add_definition('hat', 'a piece of apparel worn on the head')
-      expect(Word.display[0].definition).to eq ('a piece of apparel worn on the head')
+      expect(Word.display[0].definitions[0]).to eq ('a piece of apparel worn on the head')
     end
   end
 

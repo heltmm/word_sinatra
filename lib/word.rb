@@ -1,11 +1,11 @@
 class Word
   @@dictionary = []
 
-  attr_accessor :name, :definition, :link
+  attr_accessor :name, :definitions, :link
 
   def initialize(hash)
     @name = hash['name']
-    @definition = ''
+    @definitions = []
     @link = ''
   end
 
@@ -30,7 +30,7 @@ class Word
   end
 
   def self.add_definition(name, definition)
-    Word.search(name).definition = definition
+    Word.search(name).definitions.push(definition)
   end
 
   def self.add_link(name, link)
