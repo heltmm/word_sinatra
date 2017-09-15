@@ -2,20 +2,23 @@
 <% if @word.link != ''%>
   <img src="<%=@word.link%>" alt='image did not load'>
 <% end %>
-<% @word.definitions.each do |definition| %>
-  <h2>Definition <%=@word.definitions.index(definition) + 1%>: <%= definition %></h2>
+<% if @word.definitions == [] %>
+  <h4>No Definition added yet</h4>
 <% end %>
+  <% @word.definitions.each do |definition| %>
+  <h2>Definition <%=@word.definitions.index(definition) + 1%>: <%= definition %></h2>
+<% end %><br>
 
 <form action="/<%=@word.name %>" method="post">
-  <label for="definition">Type in your definition here</label>
+  <label for="definition">Type in your definition here</label><br>
   <input type="text" name="definition">
-  <button type="submit">Add Definition!</button>
+  <button type="submit" class='btn btn-success'>Add Definition!</button>
 </form>
 
 <form action="/image/<%=@word.name %>" method="post">
-  <label for="link">Type in your link here to add an Image</label>
+  <label for="link">Type in your link here to add an Image</label><br>
   <input type="text" name="link">
-  <button type="submit">Add an Image!</button>
+  <button type="submit" class='btn btn-info'>Add an Image!</button>
 </form>
 <form action="/delete/<%=@word.name %>" method="post">
   <button type="submit" class="btn btn-danger">Delete</button>

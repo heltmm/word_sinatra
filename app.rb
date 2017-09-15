@@ -21,6 +21,7 @@ end
 
 get('/:name') do
   @word = Word.search(params[:name])
+
   erb(:word_display)
 end
 

@@ -4,3 +4,6 @@
 .button-group{
   display: inline-block;
 }
+p {
+  font-style: italic;
+}

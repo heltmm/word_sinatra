@@ -7,8 +7,9 @@
   <input type="text" name="name" autofocus="autofocus">
   <button type="submit" class="btn btn-primary"><span>✓</span>Add a Word!</button>
 </form>
-
-
+<br>
+<h2>List of Words:</h2>
+<p>Click on a word to see its definition</p>
 <% @dictionary.each do |word| %>
   <h2><a href="/<%= word.name %>"><%= word.name %></a></h2>
 <% end %>
@@ -16,12 +17,12 @@
 <br>
 <div>
   <form class='button-group' action="/sort/" method="get">
-    <button type="submit">Sort Alphabetically</button>
+    <button type="submit" class= 'btn btn-info'>Sort Alphabetically</button>
   </form>
   <form class='button-group' action="/all/" method="get">
-    <button type="submit">See all Words and Definitions</button>
+    <button type="submit" class= 'btn btn-success'>See all Words and Definitions</button>
   </form>
   <form class='button-group' action="/random/" method="get">
-    <button type="submit">Look at a random word</button>
+    <button type="submit" class= 'btn btn-warning'>Look at a random word</button>
   </form>
 <div>
