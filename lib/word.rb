@@ -25,5 +25,9 @@ Class Word
     end
   end
 
+  def self.remove(name)
+    @@list.delete(Word.search(name))
+  end
+
 
 end

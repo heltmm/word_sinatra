@@ -26,7 +26,9 @@ describe('Word') do
 
   describe('#remove') do
     it('removes word from list') do
-      
+      Word.remove('hat')
+      expect(@@list).to eq([])
+    end
   end
 
   describe('#add_definition') do
