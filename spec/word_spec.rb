@@ -52,4 +52,14 @@ describe('Word') do
       expect(Word.display[0].link).to eq ('https://thelongdark.gamepedia.com/media/thelongdark.gamepedia.com/thumb/4/4b/Basic_Wool_Hat.png/200px-Basic_Wool_Hat.png?version=d4b2a122a5819fdc2a55fcbd4aed0336')
     end
   end
+
+  describe('#sort') do
+    it('sorts the list of words alphabetically') do
+      word2 = Word.new({'name' => 'acorn'})
+      word2.save
+      Word.sort
+      expect(Word.display[0].name + Word.display[1].name).to eq ('acornhat')
+    end
+  end
+
 end

@@ -37,5 +37,9 @@ class Word
       Word.search(name).link = link
   end
 
+  def self.sort
+    @@list.sort_by! {|word| word.name}
+  end
+
 
 end
